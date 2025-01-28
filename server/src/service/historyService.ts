@@ -1,3 +1,6 @@
+import fs from 'fs/promises'
+import path from 'path'
+
 // TODO: Define a City class with name and id properties
 class City {
   name: string,
@@ -11,7 +14,7 @@ class City {
 // TODO: Complete the HistoryService class
 class HistoryService {
   // TODO: Define a read method that reads from the searchHistory.json file
-  private async read() {
+  private async read(): Promise<City[]>{
     try {
       const res = await fetch('searchHistory.json');
       const data = await res.json();
